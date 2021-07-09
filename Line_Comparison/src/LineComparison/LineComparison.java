@@ -7,7 +7,7 @@ public class LineComparison {
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		int x1, x2, x3, x4, y1, y2, y3, y4;
-		double lengthOfLine1, lengthOfLine2;
+		double lengthOfLine1, lengthOfLine2, compare;
 		System.out.println("Welcome to Line Comparison Computation Program");
 		System.out.println("Enter the first point of line1");
 		x1 = sc.nextInt();
@@ -30,10 +30,12 @@ public class LineComparison {
 		lengthOfLine2 = Math.sqrt(Math.pow((x4 - x3), 2) + Math.pow((y4 - y3), 2));
 		String s1 = String.valueOf(lengthOfLine1);
 		String s2 = String.valueOf(lengthOfLine2);
-		if (s2.equals(s1)) {
-			System.out.println("Lines are equal");
+		compare = s2.compareTo(s1);
+		if (compare > 0) {
+			System.out.println("Line2 is greater than Line1");
+		} else if (compare < 0) {
+			System.out.println("Line1 is greater than Line2");
 		} else
-			System.out.println("Lines are not equal");
-
+			System.out.println("Lines are equal");
 	}
 }
